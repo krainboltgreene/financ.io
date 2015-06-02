@@ -1,0 +1,30 @@
+<h1>New Income</h1>
+
+<%= form_for @income do |form| %>
+  <fieldset>
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :amount %>
+    <%= form.text_field :amount, value: "0.00" %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :bank %>
+    <%= form.collection_select(:bank_id, Bank.all, :id, :name) %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :rate, "Rate (In Days)" %>
+    <%= form.text_field :rate %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :start_at %>
+    <%= form.text_field :start_at, value: Date.today %>
+  </fieldset>
+
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,95 @@
+<h1>Dashboard</h1>
+
+<div class="row">
+  <div class="col-lg-3 col-md-6">
+    <section class="panel panel-default">
+      <header class="panel-heading">
+        <div class="row">
+          <figure class="col-md-4">
+            <icon class="fa fa-credit-card fa-5x">
+          </figure>
+          <section class="col-md-8 text-right">
+            <h2><%= @banks.total %></h2>
+            <strong>Bank Total</strong>
+          </section>
+        </div>
+      </header>
+      <footer class="panel-footer">
+        <%= link_to "View Details", banks_path, class: "pull-left" %>
+        <%= link_to banks_path, class: "pull-right" do %>
+          <icon class="fa fa-arrow-circle-right">
+        <% end %>
+        <div class="clearfix"></div>
+      </footer>
+    </section>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <section class="panel panel-default">
+      <header class="panel-heading">
+        <div class="row">
+          <figure class="col-md-4">
+            <i class="fa fa-arrow-up fa-5x text-success"></i>
+          </figure>
+          <section class="col-md-8 text-right">
+            <h2><%= @transactions.gain %></h2>
+            <strong>Month's Gain</strong>
+          </section>
+        </div>
+      </header>
+      <footer class="panel-footer">
+        <%= link_to "View Details", transactions_path, class: "pull-left" %>
+        <%= link_to transactions_path, class: "pull-right" do %>
+          <icon class="fa fa-arrow-circle-right">
+        <% end %>
+        <div class="clearfix"></div>
+      </footer>
+    </section>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <section class="panel panel-default">
+      <header class="panel-heading">
+        <div class="row">
+          <figure class="col-md-4">
+            <i class="fa fa-arrow-down fa-5x text-danger"></i>
+          </figure>
+          <section class="col-md-8 text-right">
+            <h2><%= @transactions.loss %></h2>
+            <strong>Month's Loss</strong>
+          </section>
+        </div>
+      </header>
+      <footer class="panel-footer">
+        <%= link_to "View Details", transactions_path, class: "pull-left" %>
+        <%= link_to transactions_path, class: "pull-right" do %>
+          <icon class="fa fa-arrow-circle-right">
+        <% end %>
+        <div class="clearfix"></div>
+      </footer>
+    </section>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <section class="panel panel-default">
+      <header class="panel-heading">
+        <div class="row">
+          <figure class="col-md-3">
+            <icon class="fa fa-credit-card fa-5x">
+          </figure>
+          <section class="col-md-9 text-right">
+            <h2><%= @banks.total %></h2>
+            <strong>Bank Total</strong>
+          </section>
+        </div>
+      </header>
+      <footer class="panel-footer">
+        <%= link_to "View Details", banks_path, class: "pull-left" %>
+        <%= link_to banks_path, class: "pull-right" do %>
+          <icon class="fa fa-arrow-circle-right">
+        <% end %>
+        <div class="clearfix"></div>
+      </footer>
+    </section>
+  </div>
+</div>

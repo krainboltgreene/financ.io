@@ -1,0 +1,40 @@
+<h1>Banks</h1>
+
+<%= link_to "New Bank", new_bank_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Public</th>
+      <th>Private</th>
+      <th>Total</th>
+      <th>Transactions</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @banks.each do |bank| %>
+      <tr>
+        <td>
+          <%= bank.name %>
+        </td>
+        <td>
+          <%= bank.public %>
+        </td>
+        <td>
+          <%= bank.private %>
+        </td>
+        <td>
+          <%= bank.total %>
+        </td>
+        <td>
+          <%= link_to bank.transactions.count, transactions_path(filter: { bank_id: bank.id }) %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_bank_path(bank) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

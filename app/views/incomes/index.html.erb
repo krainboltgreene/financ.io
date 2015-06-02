@@ -1,0 +1,40 @@
+<h1>Incomes</h1>
+
+<%= link_to "New Income", new_income_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Bank</th>
+      <th>Start At</th>
+      <th>Rate (days)</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr>
+        <td>
+          <%= income.name %>
+        </td>
+        <td>
+          <%= income.amount %>
+        </td>
+        <td>
+          <%= link_to income.bank.name, bank_path(income.bank) %>
+        </td>
+        <td>
+          <%= income.start_at %>
+        </td>
+        <td>
+          <%= income.rate %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_income_path(income) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
