@@ -1,4 +1,5 @@
 class Bank < ActiveRecord::Base
+  belongs_to :organization
   has_many :transactions
   has_many :income
 

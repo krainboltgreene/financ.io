@@ -2,7 +2,7 @@ class IncomesController < ApplicationController
   before_action :authenticate_account!
 
   def index
-    @incomes = IncomeDecorator.decorate_collection(Income.all)
+    @incomes = IncomeDecorator.decorate_collection(current_organization.incomes)
   end
 
   def show
@@ -10,11 +10,11 @@ class IncomesController < ApplicationController
   end
 
   def new
-    @income = Income.new
+    @income = current_organization.incomes.new
   end
 
   def create
-    income = Income.new(IncomeDenormalizer.new(params[:income]))
+    income = current_organization.incomes.new(IncomeDenormalizer.new(params[:income]))
 
     if income.save
       redirect_to incomes_path

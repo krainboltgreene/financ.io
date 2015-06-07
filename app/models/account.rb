@@ -8,4 +8,6 @@ class Account < ActiveRecord::Base
   devise :confirmable
   devise :lockable
   devise :timeoutable
+
+  belongs_to :organization
 end

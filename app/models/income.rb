@@ -1,6 +1,7 @@
 class Income < ActiveRecord::Base
-  has_many :transactions
+  belongs_to :organization
   belongs_to :bank
+  has_many :transactions
 
   after_create :create_nonrecurring_transaction
 

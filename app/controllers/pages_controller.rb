@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :authorize_organization!, only: :dashboard
   before_action :authenticate_account!, only: :dashboard
 
   def dashboard

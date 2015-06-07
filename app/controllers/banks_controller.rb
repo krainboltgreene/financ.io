@@ -2,7 +2,7 @@ class BanksController < ApplicationController
   before_action :authenticate_account!
 
   def index
-    @banks = BankDecorator.decorate_collection(Bank.all)
+    @banks = BankDecorator.decorate_collection(current_organization.banks)
   end
 
   def show
@@ -10,11 +10,11 @@ class BanksController < ApplicationController
   end
 
   def new
-    @bank = Bank.new
+    @bank = current_organization.banks.new
   end
 
   def create
-    bank = Bank.new(create_bank_attributes)
+    bank = current_organization.banks.new(create_bank_attributes)
 
     if bank.save
       redirect_to banks_path
