@@ -10,7 +10,7 @@ gem "monetize", "1.3.0"
 gem "money", "6.5.1"
 gem "fog", "1.30.0", require: "fog/aws"
 gem "asset_sync", "1.1.0"
-
+gem "groundskeeper", "1.0.0"
 
 gem "sass-rails", "5.0.3"
 gem "uglifier", "2.7.1"
