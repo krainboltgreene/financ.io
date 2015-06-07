@@ -5,7 +5,7 @@ class Account < ActiveRecord::Base
   devise :rememberable
   devise :trackable
   devise :validatable
-  devise :confirmable
+  # devise :confirmable
   devise :lockable
   devise :timeoutable
 
