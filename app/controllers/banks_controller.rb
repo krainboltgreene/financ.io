@@ -1,4 +1,6 @@
 class BanksController < ApplicationController
+  before_action :authenticate_account!
+
   def index
     @banks = BankDecorator.decorate_collection(Bank.all)
   end

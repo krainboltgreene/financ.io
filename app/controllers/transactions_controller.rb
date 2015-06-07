@@ -1,4 +1,6 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_account!
+
   def index
     @transactions = TransactionDecorator.decorate_collection(Transaction.where(index_parameters))
   end

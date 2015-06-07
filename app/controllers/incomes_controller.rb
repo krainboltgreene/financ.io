@@ -1,4 +1,6 @@
 class IncomesController < ApplicationController
+  before_action :authenticate_account!
+
   def index
     @incomes = IncomeDecorator.decorate_collection(Income.all)
   end
