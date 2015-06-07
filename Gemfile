@@ -29,4 +29,6 @@ group :development, :test do
   gem "quiet_assets", "1.1.0"
   gem "figaro", "1.1.1"
   gem "rspec-rails", "3.2.1"
+  gem "capybara", "2.4.4"
+  gem "poltergeist", "1.6.0"
 end
