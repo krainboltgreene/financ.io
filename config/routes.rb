@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :transactions
   resources :banks
   resources :incomes
-  resources :accounts
+  resources :accounts, only: [:index]
 
   get "dashboard" => "pages#dashboard"
 
