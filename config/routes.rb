@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   get "dashboard" => "pages#dashboard"
 
-  root to: redirect("http://www.billities.io")
+  root to: redirect("http://www.financ.io")
 end
