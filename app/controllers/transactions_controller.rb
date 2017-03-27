@@ -1,6 +1,8 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_account!
+
   def index
-    @transactions = TransactionDecorator.decorate_collection(Transaction.where(index_parameters))
+    @transactions = TransactionDecorator.decorate_collection(current_organization.transactions.where(index_parameters))
   end
 
   def show
@@ -8,11 +10,11 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @transaction = Transaction.new
+    @transaction = current_organization.transactions.new
   end
 
   def create
-    transaction = Transaction.new(TransactionDenormalizer.new(params[:transaction]))
+    transaction = current_organization.transactions.new(TransactionDenormalizer.new(params[:transaction]))
 
     if transaction.save
       redirect_to transactions_path

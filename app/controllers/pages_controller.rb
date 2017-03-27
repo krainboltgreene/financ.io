@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  before_action :authorize_organization!, only: :dashboard
+  before_action :authenticate_account!, only: :dashboard
+
   def dashboard
     month_start = Date.today.beginning_of_month
     month_end = Date.today.end_of_month

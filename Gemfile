@@ -10,7 +10,7 @@ gem "monetize", "1.3.0"
 gem "money", "6.5.1"
 gem "fog", "1.30.0", require: "fog/aws"
 gem "asset_sync", "1.1.0"
-
+gem "groundskeeper", "1.0.0"
 
 gem "sass-rails", "5.0.3"
 gem "uglifier", "2.7.1"
@@ -29,4 +29,6 @@ group :development, :test do
   gem "quiet_assets", "1.1.0"
   gem "figaro", "1.1.1"
   gem "rspec-rails", "3.2.1"
+  gem "capybara", "2.4.4"
+  gem "poltergeist", "1.6.0"
 end

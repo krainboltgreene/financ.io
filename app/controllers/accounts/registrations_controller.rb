@@ -1,6 +1,8 @@
 class Accounts::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+  before_action :authorize_organization!, only: [:edit, :update]
+  before_action :store_organization_id, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -39,9 +41,14 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def store_organization_id
+    params["account"]["organization_id"] = current_organization.id
+  end
+
+  # If you have extra params to permit, append them to the sanitizer.
+  def configure_sign_up_params
+    devise_parameter_sanitizer.for(:sign_up) << :organization_id
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

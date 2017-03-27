@@ -1,0 +1,15 @@
+<h1>New Organization</h1>
+
+<%= form_for @organization do |form| %>
+  <fieldset>
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true %>
+  </fieldset>
+
+  <fieldset>
+    <%= form.label :slug %>
+    <%= form.text_field :slug %>
+  </fieldset>
+
+  <%= form.submit %>
+<% end %>

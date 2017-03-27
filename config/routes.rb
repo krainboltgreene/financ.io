@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :organizations
   devise_for :accounts, controllers: {
     registrations: "accounts/registrations",
     sessions: "accounts/sessions"
@@ -7,9 +8,9 @@ Rails.application.routes.draw do
   resources :transactions
   resources :banks
   resources :incomes
-  resources :accounts
+  resources :accounts, only: [:index]
 
   get "dashboard" => "pages#dashboard"
 
-  root to: redirect("http://www.billities.io")
+  root to: redirect("http://www.financ.io")
 end
