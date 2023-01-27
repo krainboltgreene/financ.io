@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "4.2.1"
 gem "pg", "0.18.2"
-gem "devise", "3.5.1"
+gem "devise", "4.7.1"
 gem "draper", "2.1.0"
 gem "rails-subpartial", "1.0.0"
 gem "paranoia", "2.1.2"
